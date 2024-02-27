@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev finder</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta
+      name="description"
+      content="Find github users in a simpler and more elegant away"
+    />
+    <link
+      rel="icon"
+      href="https://img.icons8.com/ios-filled/50/FFFFFF/search--v1.png"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content="DevFinder" />
+    <meta
+      property="og:description"
+      content="Find github users in a simpler and more elegant away"
+    />
+    <meta property="og:image" content="https://i.imgur.com/aRTdEVo.png" />
+    <meta property="og:url" content="https://devfinder.online/" />
+    <link rel="apple-touch-icon" href="https://i.imgur.com/MmxxrVa.png" />
+    <meta name="theme-color" content="#141c2f" />
+  </head>
+  <body>
+    <!--header-->
+    <header class="header">
+      <!--title of the web site-->
+      <h1 class="header-title">DevFinder</h1>
+      <!--Link to GitHub repository-->
+      <a
+        href="https://github.com/LuisPicon/devfinder"
+        target="_blank"
+        class="header-title-github"
+      >
+        <img
+          src="https://img.icons8.com/glyph-neue/64/FFFFFF/github.png"
+          alt="repository"
+          class="header-title-github-img"
+        />
+      </a>
+    </header>
+    <!--search-->
+    <div class="search">
+      <div class="search-input">
+        <!--search img-->
+        <img
+          src="https://img.icons8.com/ios-filled/50/FFFFFF/search--v1.png"
+          class="search-img"
+          alt="search-img"
+        />
+        <!--search input text-->
+        <input
+          type="text"
+          placeholder="Search GitHub username..."
+          class="search-input-text"
+        />
+      </div>
+      <!--start search button-->
+      <button class="search-button" id="search">Search</button>
+    </div>
+    <!--search content-->
+    <main class="main" id="main">
+      <!--full user description -->
+      <div class="main-information">
+        <!--user image-->
+        <img
+          src="https://avatars.githubusercontent.com/u/115022941?v=4"
+          alt=""
+          class="main-img"
+          id="user-img"
+        />
+        <!--about-->
+        <div class="main-information-about">
+          <!--about name and joined -->
+          <div class="main-information-about-name">
+            <!-- name-->
+            <h2 class="main-information-about-name-title" id="username">
+              LuisPicon
+            </h2>
+            <!--registration date-->
+            <p class="main-information-about-name-joined" id="joined">
+              2022-10-04
+            </p>
+          </div>
+          <!--user name-->
+          <p class="main-information-about-username" id="user-twitter">
+            LuisPicon_01
+          </p>
+          <!--bio-->
+          <p class="main-information-about-bio" id="bio">
+            Creo soluciones en base a mis problemas que probablemente le sirvan
+            a alguien mas.
+          </p>
+          <div class="main-information-about-tables">
+            <!--iteration table-->
+            <table class="main-information-about-tables-iteration">
+              <!--thead keys-->
+              <thead>
+                <tr>
+                  <th>Repos</th>
+                  <th>Followers</th>
+                  <th>Following</th>
+                </tr>
+              </thead>
+              <!--thead values-->
+              <tbody>
+                <tr>
+                  <td class="main-information-table-repost" id="repos">6</td>
+                  <td class="main-information-table-followers" id="followers">
+                    1
+                  </td>
+                  <td class="main-information-table-following" id="following">
+                    2
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!--table network-->
+            <table class="main-information-network">
+              <tbody>
+                <tr>
+                  <td class="main-information-network-country">
+                    <div class="country">
+                      <p class="icon">🗺️</p>
+                      <p id="country">Colombia</p>
+                    </div>
+                  </td>
+                  <td class="main-information-network-x">
+                    <div class="x">
+                      <img
+                        src="https://img.icons8.com/ios-filled/50/FFFFFF/twitterx--v2.png"
+                        alt="X"
+                      />
+                      <a
+                        id="twitter"
+                        href="https://twitter.com/LuisPicon_01"
+                        target="_blank"
+                      >
+                        Twitter
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="main-information-network-web">
+                    <div class="website">
+                      <p class="icon">🌐</p>
+                      <a
+                        href="https://luispicon.online/"
+                        id="website"
+                        target="_blank"
+                      >
+                        Website
+                      </a>
+                    </div>
+                  </td>
+                  <td class="main-information-network-github">
+                    <div class="github">
+                      <img
+                        src="https://img.icons8.com/glyph-neue/64/FFFFFF/github.png"
+                        alt="github"
+                      />
+                      <a
+                        href="https://github.com/LuisPicon"
+                        id="github"
+                        target="_blank"
+                        >GitHub</a
+                      >
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--resent search -->
+    <section class="resent-search">
+      <nav class="resent-search-nav">
+        <h4>Resent search</h4>
+      </nav>
+      <!--content of the search-->
+      <div class="resent-search-container" id="resent"></div>
+    </section>
+    <!--loader-->
+    <div class="loader" id="loader"></div>
+
+    <script src="app/app.js"></script>
+  </body>
+</html>
