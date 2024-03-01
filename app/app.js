@@ -154,7 +154,6 @@ class UX extends SaveData {
 
     $resent.insertAdjacentHTML("afterbegin", $img);
   }
-
   insertResentAll() {
     let position = JSON.parse(this.db),
       j = position.length - 1;
@@ -184,7 +183,6 @@ class UX extends SaveData {
         this.printData(position);
         localStorage.setItem("search", JSON.stringify(db));
         this.db = localStorage.getItem("search");
-
         e.remove();
         break;
       }
@@ -203,6 +201,8 @@ class Request extends UX {
       let res = await fetch(`https://api.github.com/users/${user}`);
       let json = await res.json();
       if (!res.ok) throw { estado: res.status, estadoTexto: res.statusText };
+      $main.classList.remove("opacity");
+      $loader.classList.remove("opacity-active");
       this.insertResent(json["login"]);
       this.save(
         json["avatar_url"],
@@ -219,14 +219,13 @@ class Request extends UX {
       );
       this.printData(JSON.parse(this.db).length - 1);
     } catch (err) {
+      $main.classList.remove("opacity");
+      $loader.classList.remove("opacity-active");
       console.error(err);
       d.querySelector(".search").classList.add("err");
       setTimeout(() => {
         d.querySelector(".search").classList.remove("err");
       }, 900);
-    } finally {
-      $main.classList.remove("opacity");
-      $loader.classList.remove("opacity-active");
     }
   }
 }
