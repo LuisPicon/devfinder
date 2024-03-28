@@ -13,8 +13,10 @@ const d = document,
   $country = d.getElementById("country"),
   $twitter = d.getElementById("twitter"),
   $website = d.getElementById("website"),
-  $github = d.getElementById("github");
+  $github = d.getElementById("github"),
+  $inputSearch = d.getElementById("input-search");
 
+console.log($inputSearch);
 class SaveData {
   constructor() {
     this.db;
@@ -244,4 +246,11 @@ d.addEventListener("click", (e) => {
 d.addEventListener("DOMContentLoaded", () => {
   request.printResent();
   request.insertResentAll();
+});
+
+$inputSearch.addEventListener("keypress", (e) => {
+  if (e.code === "Enter") {
+    let value = e.target.value;
+    request.requestData(value);
+  }
 });
